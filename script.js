@@ -1,7 +1,3 @@
-// function applyNow() {
-    
-//     alert('Apply Now button clicked!');
-//   }
 
   function dropmenu() {
     var menu = document.getElementById("menu");
@@ -41,6 +37,6 @@
       return;
     }
     else
-    window.open('payment.html','_blank');
+    window.location.href='payment.html';
 
   }

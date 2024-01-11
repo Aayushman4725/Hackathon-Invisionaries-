@@ -40,6 +40,7 @@ body {
 
   section {
     padding: 35px;
+    text-align: center;
   }
   h1{
     text-align: center;
@@ -81,8 +82,14 @@ body {
 }
 
 #login{
+  font-size: large ;
   text-align:center;
   font-weight: bolder;
+}
+#login input{
+  text-align: center;
+  font-weight: bold;
+
 }
 
     nav{
@@ -128,3 +135,6 @@ body {
       color: #1c39bb ;
       
     }
+#email{
+  width: 250px;
+}

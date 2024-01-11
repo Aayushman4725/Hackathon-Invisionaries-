@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ncit Billing System</title>
+  <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+
+  <header>
+    <a href="https://www.facebook.com/ourncit?mibextid=ZbWKwL"><img id="fb" src="fb.png" alt="facebook"></a>
+    <a href="https://www.instagram.com/ncit_college/?igsh=Z3kycHlrZHZvMXN2"><img id="insta" src="insta.png" alt="Instagram"></a>
+  </header>
+
+  <nav>
+    <a href="index.html"><img id="logo" src="e02e7e80-ff88-11ea-99ee-27a7d4592174.jpg" alt="Logo"></a>
+    <div id="menu">
+      <a target="_blank" href="https://ncit.edu.np">About NCIT</a>
+    </div>
+    <div id="menu-icon" onclick="dropmenu()">&#9776;</div>
+  </nav>
+  
+
+  <section>
+    <!-- Your Content here -->
+    <h1>Welcome to NCIT Fee Payment</h1>
+    <div id="feestructure">
+        <select id="fee-type" name="fee-type" onchange="updateSubDropdown()">
+          <option value="" selected disabled>Select Fee Structure Type</option>
+          <option value="general">General</option>
+          <option value="semester">Semester Wise</option>
+          <!-- Add more fee types as needed -->
+        </select><br>
+  
+        <div id="secondDropdownContainer" style="display: none;">
+          <select id="secondDropdown" name="secondDropdown">
+            <option value="">Select Semester</option>
+            <option value="Semester 1">Semester 1</option>
+            <option value="Semester 2">Semester 2</option>
+            <option value="Semester 3">Semester 3</option>
+          </select>
+        </div>
+      
+        <button id="calculate-amount" onclick="calculateAmount()">Calculate Amount</button>
+        <button id="pay-button" onclick="makePayment()">Pay Now</button>
+      </div>
+      <p>Welcome to the Ncit Fee Payment website.</p>
+    </section>
+  
+    <script>
+      function updateSubDropdown() {
+        var feeType = document.getElementById("fee-type");
+        var secondDropdownContainer = document.getElementById("secondDropdownContainer");
+    
+        if (feeType.value === "semester") {
+          secondDropdownContainer.style.display = "block";
+        } else {
+          secondDropdownContainer.style.display = "none";
+        }
+      }
+  </script>
+  
+
+</body>
+</html>
