@@ -1,0 +1,31 @@
+h1{
+    font-size: 130%;
+}
+
+#logo{
+    height: 150px;
+    width: 170px;
+    object-fit: cover;
+}
+
+#sub-head{
+    margin-left: 26%;
+    margin-top: -22%;
+}
+
+#receipt-info{
+    position:absolute;
+    margin-left: 71%;
+    margin-top: -37%;
+}
+
+#Receipt{
+    margin-left: 62%;
+    margin-top: -13%;
+    font-size: 390%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
+}
+
+hr{
+    margin-top: -8%;
+}
