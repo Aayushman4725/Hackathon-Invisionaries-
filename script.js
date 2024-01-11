@@ -36,11 +36,11 @@
     const otp = otpInput.value.trim();
     
     // Validate email format
-    if (!isEmailValid(email)) {
-      alert('Please enter a valid email in the format name.roll@ncit.edu.np');
-      return;
-    }
-    else
-    window.open('payment.html','_blank');
+    // if (!isEmailValid(email)) {
+    //   alert('Please enter a valid email in the format name.roll@ncit.edu.np');
+    //   return;
+    // }
+    // else
+    // window.open('payment.html','_blank');
 
   }
