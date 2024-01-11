@@ -4,48 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receipt</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        * {
+            position: relative;
+        }
+
+        h1 {
+            font-size: 1.3em;
+        }
+
+        #logo {
+            height: 200px;
+            width: 200px;
+            object-fit: cover;
+        }
+
+        #sub-head {
+            margin-top: 2%;
+        }
+
+        #receipt-info {
+            position: absolute;
+            top: 2%;
+            right: 2%;
+        }
+
+        #Receipt {
+            font-size: 3.9em;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+
+        hr {
+            margin-top: 2%;
+        }
+
+        #student-info {
+            margin-top: 2%;
+        }
+    </style>
 </head>
-<body>
-    <div id="header">
-        <img src="./ncit.jpeg" id="logo">
-        <div id="sub-head">
-            <h1 id="heading" >NEPAL COLLEGE OF INFORMATION TECHNOLOGY</h1>
-            <p id="header-info">Balkumari, Lalitpur<br>Tel: 5186354/5186358<br><br><br>PAN: 500210200</p>
-            <p id="Receipt"><i><b>Receipt</b></i></p>
+<body class="container">
+    <div id="header" class="text-center">
+        <img src="./ncit.jpeg" id="logo" class="img-fluid" alt="NCIT Logo">
+        <div id="sub-head" class="mt-3">
+            <h1 id="heading">NEPAL COLLEGE OF INFORMATION TECHNOLOGY</h1>
+            <p id="header-info" class="text-muted">Balkumari, Lalitpur<br>Tel: 5186354/5186358<br>PAN: 500210200</p>
+            <p id="Receipt" class="font-italic"><b>Receipt</b></p>
+        </div>
     </div>
-    </div>
-    <hr/>
+    <hr class="my-4">
     <div id="student-info">
-        <table>
+        <table class="table table-bordered">
             <tr>
-                Student ID: <p id="StudentID"></p>
+                <th>Student ID:</th>
+                <td id="StudentID"></td>
             </tr>
             <tr>
-                Name: <p id="name"></p>
+                <th>Name:</th>
+                <td id="name"></td>
             </tr>
             <tr>
-                Course: <p id="course"></p>
+                <th>Course:</th>
+                <td id="course"></td>
             </tr>
             <tr>
-                Semester: <p id="sem"></p>
+                <th>Semester:</th>
+                <td id="sem"></td>
             </tr>
             <tr>
-                Year: <p id="year"></p>
+                <th>Year:</th>
+                <td id="year"></td>
             </tr>
             <tr>
-                <b>Paid Amount: <p id="Amount"></p></b>
+                <th>Paid Amount:</th>
+                <td id="Amount"></td>
             </tr>
         </table>
-        <br>
-        <br>
-        Amount in words: <p id="amount-in-words"></p>
-   </div>
+        <p class="font-italic">Amount in words: <span id="amount-in-words"></span></p>
+    </div>
 
-   <div id="receipt-info">
-    Receipt Number: <p id="receipt-no"></p>
-    Receipt Date: <p id="receipt-date"></p>
-    Fiscal Year: <p id="fiscal"></p>
-   </div>
-<link rel="stylesheet" href="receipt.css" type="text/css">
+    <div id="receipt-info">
+        <p>Receipt Number: <span id="receipt-no"></span></p>
+        <p>Receipt Date: <span id="receipt-date"></span></p>
+        <p>Fiscal Year: <span id="fiscal"></span></p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
