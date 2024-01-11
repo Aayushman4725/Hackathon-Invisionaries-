@@ -1,36 +1,31 @@
-* {
-    position: relative;
+h1{
+    font-size: 130%;
 }
 
-h1 {
-    font-size: 1.3em;
-}
-
-#logo {
-    height: 200px;
-    width: 200px;
+#logo{
+    height: 150px;
+    width: 170px;
     object-fit: cover;
 }
 
-#sub-head {
-    margin-top: 2%;
+#sub-head{
+    margin-left: 26%;
+    margin-top: -22%;
 }
 
-#receipt-info {
-    position: absolute;
-    top: 2%;
-    right: 2%;
+#receipt-info{
+    position:absolute;
+    margin-left: 71%;
+    margin-top: -37%;
 }
 
-#Receipt {
-    font-size: 3.9em;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+#Receipt{
+    margin-left: 62%;
+    margin-top: -13%;
+    font-size: 390%;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif ;
 }
 
-hr {
-    margin-top: 2%;
-}
-
-#student-info {
-    margin-top: 2%;
+hr{
+    margin-top: -8%;
 }

@@ -14,12 +14,11 @@
   </header>
 
   <nav>
-    <div id="menu-icon" onclick="dropmenu()">&#9776;</div>
     <a href="index.html"><img id="logo" src="e02e7e80-ff88-11ea-99ee-27a7d4592174.jpg" alt="Logo"></a>
     <div id="menu">
       <a target="_blank" href="https://ncit.edu.np">About NCIT</a>
     </div>
-    <button onclick="applyNow()">Apply Now</button>
+    <div id="menu-icon" onclick="dropmenu()">&#9776;</div>
   </nav>
   
 
@@ -31,7 +30,8 @@
     <div id="login">
       <label id="username">Email: </label><br/>
       <input type="email" id="email" name="email"><br/><br>
-      <label id="Password" name="password">OTP</label><br>
+      <button id="sendmail">Send OTP</button><br><br>
+      <label id="Password" name="password">OTP:</label><br>
       <input type="number" id="otp" name="password">
       <br/><br>
       <button id="login" onclick="login()">Login</button>

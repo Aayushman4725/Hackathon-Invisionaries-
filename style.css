@@ -13,10 +13,18 @@ body {
     justify-content: space-evenly;
   }
 
-  #fb,#insta{
-    width: 70px; /* Adjust the width as needed */
+  #fb{
+    width: 70px; 
     height: 70px;
     border-radius: 100%;
+    margin-left: 30%;
+    transition: all 0.2s ease-in-out ;
+  }
+  #insta{
+    width: 70px; 
+    height: 70px;
+    border-radius: 100%;
+    margin-right: 30%;
     transition: all 0.2s ease-in-out ;
   }
 
@@ -30,29 +38,6 @@ body {
     box-shadow: 0px 0px 15px #1C3988 ;
   }
 
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    background-color: #eee;
-  }
-  
-  nav a {
-    font-size: bold;
-    margin: 15px;
-    text-decoration: none;
-    color: #1c39bb ;
-    font-weight: bold;
-  }
-  nav a:hover{
-    text-decoration: underline;
-  }
-  
-  nav img {
-    align-items:flex-start ;
-    margin-left:48%;
-  }
-  
   section {
     padding: 35px;
   }
@@ -74,24 +59,6 @@ body {
     transform:scale(1.1);
     box-shadow: 0px 0px 33px rgb(8, 127, 246) ;
   }
-
-#menu {
-  display: none;
-  position: relative;
-  background-color: #eee;
-  padding: 5px;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
-#menu-icon{
-    padding: 6px;
-    font-size: 24px; 
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out ;
-
-  }
   
   #menu-icon:hover{
   transform: scale(1.1);
@@ -101,6 +68,7 @@ body {
 #logo{
   width: 40%;
   height: 60%;
+  margin-left: 30%;
   border-radius: 100%;
   transition: all 0.2s ease-in-out ;
 
@@ -117,13 +85,12 @@ body {
   font-weight: bolder;
 }
 
-
-  @media only screen and (max-width: 700px) {
-    nav {
+    nav{
       display: flex;
       align-items: center;
-      justify-content: space-evenly;
+      justify-content:center;
       background-color: #eee;
+      padding: 10px;
     }
     
   #menu {
@@ -141,6 +108,7 @@ body {
     font-weight: bold;
     font-size:medium;
     padding: 8px;
+    text-decoration: none;
   }
   #menu a:hover{
     text-decoration: underline;
@@ -154,9 +122,9 @@ body {
     right: 20px;
     color: black;
     display:block;
+    font-weight: bold;
   }
     #menu-icon:hover {
       color: #1c39bb ;
       
     }
-  }

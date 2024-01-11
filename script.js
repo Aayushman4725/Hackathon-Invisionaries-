@@ -1,7 +1,7 @@
-function applyNow() {
+// function applyNow() {
     
-    alert('Apply Now button clicked!');
-  }
+//     alert('Apply Now button clicked!');
+//   }
 
   function dropmenu() {
     var menu = document.getElementById("menu");
