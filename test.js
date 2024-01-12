@@ -1,6 +1,6 @@
-<!--Codde for email splitting 
+// Code for email splitting 
 
-    const email=prompt("Enter a valid email");
+const email=prompt("Enter a valid email");
 
 // Split the email address based on the dot ('.') and '@' symbols
 const parts = email.split(/\.|@/);
@@ -12,4 +12,3 @@ const rollNumber = parts[1];
 // Display the results
 console.log('Username:', username);
 console.log('Roll Number:', rollNumber);
- -->
