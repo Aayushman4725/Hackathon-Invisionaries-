@@ -20,47 +20,42 @@
     </div>
     <div id="menu-icon" onclick="dropmenu()">&#9776;</div>
   </nav>
-  
 
   <section>
-    <!-- Your Content here -->
     <h1>Welcome to NCIT Fee Payment</h1>
     <div id="feestructure">
-        <select id="fee-type" name="fee-type" onchange="updateSubDropdown()">
-          <option value="" selected disabled>Select Fee Structure Type</option>
+      <select id="fee-type" name="fee-type" onchange="showViewStructureButton()" style="width: 70%;">
+        <option value="" selected disabled>Select Fee Structure Type</option>
           <option value="general">General</option>
           <option value="semester">Semester Wise</option>
           <!-- Add more fee types as needed -->
         </select><br>
   
         <div id="secondDropdownContainer" style="display: none;">
-          <select id="secondDropdown" name="secondDropdown">
-            <option value="">Select Semester</option>
+          <select id="secondDropdown" name="secondDropdown" style="width: 70%">
+            <option value="" selected disabled>Select Semester</option>
             <option value="Semester 1">Semester 1</option>
             <option value="Semester 2">Semester 2</option>
             <option value="Semester 3">Semester 3</option>
+            <option value="Semester 4">Semester 4</option>
+            <option value="Semester 5">Semester 5</option>
+            <option value="Semester 6">Semester 6</option>
+            <option value="Semester 7">Semester 7</option>
+            <option value="Semester 8">Semester 8</option>
           </select>
         </div>
-      
-        <button id="calculate-amount" onclick="calculateAmount()">Calculate Amount</button>
-        <button id="pay-button" onclick="makePayment()">Pay Now</button>
+          
+          <button id="calculate-amount" onclick="calculateAmount()" style="display: none;">Calculate Amount</button>
+          <button id="pay-button" onclick="makePayment()" style="display: none;">Pay Now</button>
+          <button id="view-structure-button" onclick="window.open('generalfee.html','_blank')" style="display: none ;margin: auto; position: absolute; right: 50%; ">
+            View Structure
+          </button>
+         
       </div>
-      <p>Welcome to the Ncit Fee Payment website.</p>
     </section>
-  
-    <script>
-      function updateSubDropdown() {
-        var feeType = document.getElementById("fee-type");
-        var secondDropdownContainer = document.getElementById("secondDropdownContainer");
-    
-        if (feeType.value === "semester") {
-          secondDropdownContainer.style.display = "block";
-        } else {
-          secondDropdownContainer.style.display = "none";
-        }
-      }
-  </script>
-  
+
+    <script src="fee.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>

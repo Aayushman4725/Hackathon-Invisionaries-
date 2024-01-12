@@ -38,5 +38,4 @@
     }
     else
     window.location.href='payment.html';
-
   }
