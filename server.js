@@ -80,10 +80,7 @@ app.post('/', async (req, res) => {
 
 app.get("/api/getStudentInfo/:roll", async (req, res) => {
   try {
-    const objectIdFromStr = new ObjectId(req.params.roll);
-    var studentIdb = parseInt
-
-    const studentInfoData = await studentInfo.find({ roll:1 });
+    const studentInfoData = await studentInfo.findOne({roll:req.params.roll});
     console.log(studentInfoData)
     if (!studentInfoData) {
       return res.status(404).json({ message: "Student not found" });
