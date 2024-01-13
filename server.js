@@ -2,19 +2,17 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const controller = require("./backend/controller/controller.js");
+const bodyParser = require('body-parser')
 const axios = require("axios");
 const morgan = require("morgan");
 
 // Models file
 const studentInfo = require("./backend/models/usermodule");
-const mongoose = require("mongoose"); // Fix the import statement
+const mongoose = require("mongoose");
+const { ObjectId } = require("mongodb");
 
 const app = express();
 const port = 3000;
-
-// Database connection
-const connectDB = require('./backend/database/connection');
-connectDB();
 
 // Serve static files, including images
 app.use(express.static(path.join(__dirname, 'html')));
@@ -37,10 +35,8 @@ app.get('/feestructure.html', async (req, res) => {
   }
 });
 
-// Rest of your code...
-
 console.log("Before query");
-studentInfo.findOne({ semester:"4" }).exec()
+studentInfo.findOne({ semester: "4" }).exec()
   .then(data => {
     console.log(data);
   })
@@ -67,9 +63,48 @@ app.get('/about', (req, res) => {
   res.status(200).send('This is about page');
 });
 
-app.get('/api/users', controller.find);
-app.put('/api/users/:id', controller.update);
+app.post('/', async (req, res) => {
+  const studentsData = [
+    { roll: '1', sem1: '90', sem2: '85', sem3: '78', sem4: '92', sem5: '88', sem6: '75', sem7: '80', sem8: '85' },
+    { roll: '2', sem1: '85', sem2: '88', sem3: '92', sem4: '78', sem5: '85', sem6: '90', sem7: '80', sem8: '75' },
+    // Add more data as needed
+  ];
+  
+  // Insert data into MongoDB
+  console.log(studentsData)
+ var result = await studentInfo.insertMany(studentsData)
+ 
+  res.send(result.insertedIds)
 
-app.listen(port, () => {
-  console.log(`listening on http://localhost:${port}`);
+})
+
+app.get("/api/getStudentInfo/:roll", async (req, res) => {
+  try {
+    const objectIdFromStr = new ObjectId(req.params.roll);
+    var studentIdb = parseInt
+
+    const studentInfoData = await studentInfo.find({ roll:1 });
+    console.log(studentInfoData)
+    if (!studentInfoData) {
+      return res.status(404).json({ message: "Student not found" });
+    }
+    res.status(200).json(studentInfoData);
+  } catch (error) {
+    console.error("Error fetching student info:", error);
+    res.status(500).json({ message: error.message });
+  }
 });
+
+
+
+// Connect to MongoDB and start the server
+mongoose.connect("mongodb+srv://aayushmannp:Nepal%401984@cluster0.wolfmk9.mongodb.net/BillingSystem")
+  .then(() => {
+    console.log("Database connected successfully.");
+    app.listen(port, () => {
+      console.log(`Listening on http://localhost:${port}`);
+    });
+  })
+  .catch(err => {
+    console.log("Error connecting to DB.", err);
+  });
