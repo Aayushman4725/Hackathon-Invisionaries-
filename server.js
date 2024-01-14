@@ -67,7 +67,10 @@ app.post('/', async (req, res) => {
   const studentsData = [
     { roll: '1', sem1: '90', sem2: '85', sem3: '78', sem4: '92', sem5: '88', sem6: '75', sem7: '80', sem8: '85' },
     { roll: '2', sem1: '85', sem2: '88', sem3: '92', sem4: '78', sem5: '85', sem6: '90', sem7: '80', sem8: '75' },
-    // Add more data as needed
+    { roll: '3', sem1: '90', sem2: '85', sem3: '78', sem4: '92', sem5: '88', sem6: '75', sem7: '80', sem8: '85' },
+    { roll: '4', sem1: '85', sem2: '88', sem3: '92', sem4: '78', sem5: '85', sem6: '90', sem7: '80', sem8: '75' },
+    { roll: '5', sem1: '90', sem2: '85', sem3: '78', sem4: '92', sem5: '88', sem6: '75', sem7: '80', sem8: '85' },
+    { roll: '6', sem1: '85', sem2: '88', sem3: '92', sem4: '78', sem5: '85', sem6: '90', sem7: '80', sem8: '75' },
   ];
   
   // Insert data into MongoDB
@@ -91,7 +94,6 @@ app.get("/api/getStudentInfo/:roll", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-
 
 
 // Connect to MongoDB and start the server

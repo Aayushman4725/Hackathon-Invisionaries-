@@ -12,16 +12,29 @@
 //   }
 
 const otp_input = document.querySelector("#otp");
-const email = document.querySelector("#email");
+const emailInput = document.querySelector("#email");
 let otp = Math.floor(Math.random() * 10000);
-function sendOTP() {
-   
-    
-    console.log(otp);
-    alert(otp);
-    let emailBody = `<h2>Your OTP is</h2> ${otp}`;
 
+function sendOTP() {
+    const email = emailInput.value.trim();
+
+    function isEmailValid(email) {
+        // Regular expression for the specified email format
+        const emailPattern = /^[a-zA-Z]+\.\d+@ncit\.edu\.np$/;
+        return emailPattern.test(email);
+    }
+
+    if (!isEmailValid(email)) {
+        alert('Please enter a valid email in the format name.roll@ncit.edu.np');
+        return;
+    }
+    
+
+    console.log(otp);
+    // alert(otp);
+    otp_input.value=otp;
 }
+
 
 // const login = document.querySelector("#login");
 const login= () => {
